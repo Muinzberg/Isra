@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 16th Birthday Isra! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #50C878 0%, #FF69B4 50%, #98D8C8 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 50px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .birthday-cake {
+            font-size: 120px;
+            animation: bounce 2s infinite;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(255,105,180,0.5));
+        }
+
+        h1 {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #50C878, #FF69B4, #98D8C8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 0 30px rgba(255,105,180,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #2d4a3a;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Love Message */
+        .love-message {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            border-radius: 25px;
+            margin: 50px 0;
+            box-shadow: 0 20px 40px rgba(80,200,120,0.3);
+            border: 2px solid rgba(255,105,180,0.3);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .love-message h2 {
+            color: #FF69B4;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .love-message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #2d4a3a;
+            margin-bottom: 20px;
+        }
+
+        /* Memories Grid */
+        .memories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .memory-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(152,216,200,0.5));
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(80,200,120,0.3);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease both;
+            border: 1px solid rgba(255,105,180,0.2);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255,105,180,0.4);
+        }
+
+        .memory-card i {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #50C878, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .memory-card h3 {
+            color: #2d4a3a;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .photo-frame {
+            height: 250px;
+            background: linear-gradient(45deg, #50C878, #FF69B4);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(80,200,120,0.4);
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255,105,180,0.6);
+        }
+
+        /* Music Player */
+        .music-player {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,105,180,0.1));
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(80,200,120,0.3);
+            border: 2px solid rgba(255,105,180,0.3);
+        }
+
+        .play-btn {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #50C878, #FF69B4);
+            border: none;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(80,200,120,0.4);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(255,105,180,0.6);
+        }
+
+        /* Countdown */
+        .countdown {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,105,180,0.1));
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(80,200,120,0.3);
+        }
+
+        .countdown h3 {
+            font-size: 1.5rem;
+            color: #FF69B4;
+            margin-bottom: 20px;
+        }
+
+        .time {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #50C878, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* INTJ Special Section */
+        .intj-section {
+            background: linear-gradient(135deg, rgba(80,200,120,0.1), rgba(255,105,180,0.1));
+            padding: 40px;
+            border-radius: 25px;
+            margin: 60px 0;
+            text-align: center;
+            border: 2px solid rgba(80,200,120,0.3);
+        }
+
+        .intj-section h2 {
+            color: #50C878;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .birthday-cake { font-size: 80px; }
+            .hero { padding: 60px 20px; }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .heart {
+            color: #FF69B4;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="birthday-cake">🎂✨🎈</div>
+            <h1>Happy 16th Birthday Isra!</h1>
+            <p class="subtitle">My love | My Everything ❤️</p>
+        </section>
+
+        <!-- Love Message -->
+        <section class="love-message">
+            <h2><i class="fas fa-heart heart"></i> To My Beautiful Isra</h2>
+            <p>
+                Isra, you're not just turning 16 - you're leveling up to legendary status! 💚💕<br><br>
+
+                As the loveliest girl I know,I love you .
+                Your mind is a masterpiece, your heart is pure magic, and your smile?
+                It stops time. Every moment with you feels like winning the lottery. 🎰<br><br>
+
+                Here's to your best year yet - filled with deep conversations,
+               and our memories 🏆
+            </p>
+            <div style="font-size: 2rem; margin-top: 20px; color: #FF69B4;">Forever your biggest fan, Bilal 💚💕</div>
+        </section>
+
+        <!-- INTJ Special -->
+        <section class="intj-section">
+            <h2><i class="fas fa-brain"></i> Special for My Queen</h2>
+            <p style="font-size: 1.3rem; color: #2d4a3a;">
+                "The Architect" - Strategic, independent, brilliant.
+                You plan 10 steps ahead and make the impossible look easy.
+                Proud to be loved by someone as extraordinary as you! 🧠✨
+            </p>
+        </section>
+
+        <!-- Memories -->
+        <section class="memories">
+            <div class="memory-card">
+                <i class="fas fa-star"></i>
+                <h3>First Spark</h3>
+                <p>That moment I realized you're the most interesting person I've ever met 🌟</p>
+            </div>
+            <div class="memory-card">
+                <i class="fas fa-book"></i>
+                <h3>Deep Talks</h3>
+                <p>Our 3AM conversations about life, dreams, and the universe 🪐</p>
+            </div>
+            <div class="memory-card">
+                <i class="fas fa-laugh"></i>
+                <h3>Your Smile</h3>
+                <p>Rare but world-changing.😍</p>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section style="text-align: center;">
+            <h2 style="color: #50C878; margin-bottom: 40px; font-size: 2.5rem;">📸 Our Memories</h2>
+            <div class="gallery">
+                <div class="photo-frame">💚 Photo 1</div>
+                <div class="photo-frame">💕 Photo 2</div>
+                <div class="photo-frame">✨ Photo 3</div>
+                <div class="photo-frame">🎂 Photo 4</div>
+                <div class="photo-frame">🌟 Photo 5</div>
+                <div class="photo-frame">❤️ Photo 6</div>
+            </div>
+        </section>
+
+        <!-- Music Player -->
+        <section class="music-player">
+            <h2><i class="fas fa-music"></i> Our Song</h2>
+            <p>Isra's favorite tune that makes us both smile 🎶</p>
+            <button class="play-btn" onclick="playMusic()">
+                <i class="fas fa-play"></i>
+            </button>
+            <p style="margin-top: 20px; font-style: italic; color: #2d4a3a;">"[Her Favorite Song]" - Perfect for our INTJ-Personality duo 💚💕</p>
+        </section>
+
+        <!-- Countdown -->
+        <section class="countdown">
+            <h3>Days Until Isra's Next Epic Birthday! 🎉</h3>
+            <div class="time" id="countdown">Calculating...</div>
+            <p style="color: #2d4a3a; margin-top: 10px;">April 12, 2025</p>
+        </section>
+    </div>
+
+    <script>
+
+        // Countdown to April 12 next year
+        function updateCountdown() {
+            const now = new Date();
+            let nextBirthday = new Date(now.getFullYear(), 3, 12); // April 12
+            if (now > nextBirthday) {
+                nextBirthday.setFullYear(nextBirthday.getFullYear() + 2);
+            }
+
+            const diff = nextBirthday - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').textContent = `${days} days`;
+        }
+
+        setInterval(updateCountdown, 86400000);
+        updateCountdown();
+
+        // Epic confetti explosion
+        function confetti() {
+            const colors = ['#50C878', '#FF69B4', '#98D8C8', '#FF1493'];
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.cssText = `
+                        position: fixed;
+                        left: ${Math.random() * 100}vw;
+                        top: -10px;
+                        width: 12px;
+                        height: 12px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        animation: fall linear 3s;
+                    `;
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 15);
+            }
+        }
+
+        // Add falling animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        window.addEventListener('load', confetti);
+    </script>
+</body>
+</html>
